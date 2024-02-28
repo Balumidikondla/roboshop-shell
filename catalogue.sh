@@ -17,8 +17,8 @@ VALIDATE (){
        echo -e "$2....$R FAILED $N"
     else
        echo -e "$2...$G success $N"
-
-    f1
+    exit 1
+    fi
 }
 
 if [ $ID -ne 0]
