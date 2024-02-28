@@ -4,14 +4,14 @@ ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-MONGODB-HOST=mongodb.nagendrababu.online
+MONGODB_HOST=mongodb.nagendrababu.online
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.LOG"
 
 echo "script started exacuting at $TIMESTAMP" &>> $LOGFILE
 
-VALIDATE{
+VALIDATE {
     if [$1 -ne 0 ]
     then 
        echo -e "$2....$R FAILED $N"
