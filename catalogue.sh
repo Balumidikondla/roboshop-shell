@@ -32,15 +32,15 @@ dnf module disable nodejs -y &>> LOGFILE
 
 VALIDATE $? "Disable"
 
-dnf module enable nodejs:18 -y
+dnf module enable nodejs:18 -y  &>> LOGFILE
 
 VALIDATE $? "Enabe "
 
-dnf install nodejs -y
+dnf install nodejs -y  &>> LOGFILE
 
 VALIDATE $? "INSTALLING"
 
-useradd roboshop
+useradd roboshop &>> LOGFILE
 
 VALIDATE $? "USER ADD THE ROBOSHOP"
 
