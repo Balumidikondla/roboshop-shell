@@ -16,8 +16,7 @@ VALIDATE (){
     then 
        echo -e "$2....$R FAILED $N"
     else
-       echo -e "$2...$G success $N"
-    exit 1
+       echo -e "$2...$G success $N"git 
     fi
 }
 
