@@ -80,16 +80,16 @@ systemctl enable user
 
 VALIDATE $? "Enabel the value"
 
-systemctl start user &>>$LOGFILE
+systemctl start user &>> $LOGFILE
 
 VALIDATE $? "Start user"
 
-dnf install mongodb-org-shell -y &>>$LOGFILE
+dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "INSTALLING MONGODB"
 
-mongo --host mongdb.nagendrababu.online </app/schema/user.js &>>$LOGFILE
+mongo --host mongdb.nagendrababu.online </app/schema/user.js &>> $LOGFILE
 
-VALIDATE $? "Host user value"
+VALIDATE $? " Host user value "
 
 
