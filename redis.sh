@@ -52,5 +52,5 @@ VALIDATE $? "ENABLE AFTER THE CRATION"
 
 systemctl start redis
 
-VALIDATE $? " start redis "
+VALIDATE $? "Start redis"
 
