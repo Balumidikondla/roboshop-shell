@@ -72,7 +72,7 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "Reload daemon"
 
-systemctl enable user &>> $LOGFILE
+systemctl enable user 
 
 VALIDATE $? "Enabel the value"
 
@@ -80,7 +80,7 @@ systemctl start user &>> $LOGFILE
 
 VALIDATE $? "Start user"
 
-dnf install mongodb-org-shell -y &>> $LOGFILE
+dnf install mongodb-org-shell -y  &>> $LOGFILE
 
 VALIDATE $? "INSTALLING MONGODB"
 
