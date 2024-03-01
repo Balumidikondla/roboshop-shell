@@ -44,7 +44,7 @@ rm -rf /usr/share/nginx/html/* &>> $LOGFILE
 VALIDATE $? "remove default website
 
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFILE
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip 
 
 VALIDATE $? "Download web application"
 
