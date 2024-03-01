@@ -68,7 +68,7 @@ npm install &>> $LOGFILE
 
 VALIDATE $? "Installing this "
 
-cp /home/centos/roboshop-shell catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> &LOGFILE
 
 VALIDATE $? "GIVE ACCESS TO THE DIRECTORY"
 
@@ -84,14 +84,14 @@ systemctl start catalogue &>> $LOGFILE
 
 VALIDATE $? "START THIS ACTION NOW"
 
-cp /home/centos/roboshop-shell/etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org-shell -y &>> $LOGFILE 
 
 VALIDATE $? "Installing mongodb"
 
 
-mongo --host $MONGDB_HOST </app/schema/catalogue.js &>> $LOGFILE
+mongo --host $MONGDB_HOST </app/schema/catalogue.js 
 
 VALIDATE $? "Loading catalogue data into MongDB"
 
