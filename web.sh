@@ -11,7 +11,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo "script exacuting at  $TIMESTAMP" &>> $LOGFILE"
 
 VALIDATION (){
-    if [$1 -ne 0]
+    if [ $1 -ne 0 ]
     then 
        echo -e "$2...$R FAILURE $N"
     else
@@ -27,3 +27,39 @@ else
     echo "you are root user"
 fi
 
+dnf install nginx -y
+
+VALIDATE $? "Installing nginx"
+
+systemctl enable nginx
+
+VALIDATE $? "Installing nginx"
+
+systemctl start nginx
+
+VALIDATE $? "STARTING NGINX"
+
+rm -rf /usr/share/nginx/html/*
+
+VALIDATE $? "remove default website
+
+
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
+
+VALIDATE $? "Download web application"
+
+cd /usr/share/nginx/html
+
+VALIDATE $? "Download web applicatin"
+
+unzip /tmp/web.zip
+
+VALIDATE $? "UNZIPPING APPLICATION"
+
+cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
+
+VALIDATE $? "copied roboshop reverse proxy"
+
+systemctl restart nginx 
+
+VALIDATE $? "restarting nginx
