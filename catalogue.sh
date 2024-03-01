@@ -68,7 +68,7 @@ npm install &>> $LOGFILE
 
 VALIDATE $? "Installing this "
 
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> &LOGFILE
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
 VALIDATE $? "GIVE ACCESS TO THE DIRECTORY"
 
