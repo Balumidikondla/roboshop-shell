@@ -7,7 +7,7 @@ N="\e[0m"
 MONGODB_HOST=mongodb.nagendrababu.online
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE="/tmp/$0-$TIMESTAMP.LOG"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "script started exacuting at $TIMESTAMP" &>> $LOGFILE
 
@@ -28,19 +28,19 @@ then
 else
    echo "you are root user"
 fi
-dnf module disable nodejs -y &>> LOGFILE
+dnf module disable nodejs -y &>> $LOGFILE
 
 VALIDATE $? "Disable"
 
-dnf module enable nodejs:18 -y  &>> LOGFILE
+dnf module enable nodejs:18 -y  &>> $LOGFILE
 
 VALIDATE $? "Enabe "
 
-dnf install nodejs -y  &>> LOGFILE
+dnf install nodejs -y  &>> $LOGFILE
 
 VALIDATE $? "INSTALLING"
 
-useradd roboshop &>> LOGFILE
+useradd roboshop &>> $LOGFILE
 
 VALIDATE $? "USER ADD THE ROBOSHOP"
 
