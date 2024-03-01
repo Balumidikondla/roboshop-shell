@@ -88,8 +88,8 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "INSTALLING MONGODB"
 
-mongo --host mongdb.nagendrababu.online </app/schema/user.js &>> $LOGFILE
+mongo --host mongdb.nagendrababu.online </app/schema/user.js
 
-VALIDATE $? " Host user value "
+VALIDATE $? "Host user value"
 
 
