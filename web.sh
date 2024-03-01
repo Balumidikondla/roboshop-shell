@@ -48,9 +48,9 @@ curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFI
 
 VALIDATE $? "Download web application"
 
-cd /usr/share/nginx/html &>> $LOGFILE
+cd /usr/share/nginx/html 
 
-VALIDATE $? "Download web applicatin"
+VALIDATE $? "Download web application"
 
 unzip /tmp/web.zip &>> $LOGFILE
 
