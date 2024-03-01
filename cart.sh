@@ -15,7 +15,7 @@ VALIDATE (){
     then 
        echo -e "$2....$R FAILED $N"
     else
-       echo -e "$2...$G success $N"git 
+       echo -e "$2...$G success $N"
     fi
 }
 
@@ -38,6 +38,7 @@ VALIDATE $? "Enable"
 dnf install nodejs -y  &>> $LOGFILE
 
 VALIDATE $? "INSTALLING"
+
 id roboshop
 if [ $? -ne 0 ]
 then 
@@ -46,8 +47,6 @@ then
 else
    echo  -e "roboshp user already exist $Y skipping $N"
 fi
-
-
 
 mkdir -p /app
 
