@@ -4,7 +4,6 @@ ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-MONGDB_HOST=mongdb.nagendrababu.online
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
@@ -91,7 +90,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? "Installing mongodb"
 
 
-mongo --host $ <MONGDB_HOST /app/schema/catalogue.js  &>> $LOGFILE
+mongo --host $ <mongdb.nagendrababu.online /app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Loading catalogue data into MongDB"
 
