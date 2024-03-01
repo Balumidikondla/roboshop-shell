@@ -27,7 +27,7 @@ then
 else
    echo "you are root user"
 fi
-dnf module disable nodejs -y &>> $LOGFILEeee
+dnf module disable nodejs -y &>> $LOGFILE
 
 VALIDATE $? "Disable"
 
