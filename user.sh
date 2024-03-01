@@ -68,23 +68,23 @@ npm install &>> $LOGFILE
 
 VALIDATE $? "Installing this "
 
-systemctl daemon-reload
+systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "Reload daemon"
 
-systemctl enable user 
+systemctl enable user &>> $LOGFILE
 
 VALIDATE $? "Enabel the value"
 
-systemctl start user
+systemctl start user &>> $LOGFILE
 
 VALIDATE $? "Start user"
 
-dnf install mongodb-org-shell -y
+dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "INSTALLING MONGODB"
 
-mongo --host mongdb.nagendrababu </app/schema/user.js
+mongo --host mongdb.nagendrababu </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? " Host user value"
 
