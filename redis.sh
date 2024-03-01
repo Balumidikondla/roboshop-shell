@@ -46,12 +46,11 @@ sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis.conf
 
 VALIDATION $? "ALLOWING REMOTE CONNECTION"
 
-
 systemctl enable redis
 
 VALIDATE $? "ENABLE AFTER THE CRATION"
 
 systemctl start redis
 
-VALIDATE $? "Start redis"
+VALIDATE $? "STArt redis"
 
