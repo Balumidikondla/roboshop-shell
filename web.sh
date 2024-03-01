@@ -5,7 +5,7 @@ G="\e[32m"
 Y="\e[33M"
 N="\e[0m"
 
-TIMESTAMP=$(time +%F-%H-%M-%S)
+TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "script exacuting at  $TIMESTAMP" &>> $LOGFILE"
