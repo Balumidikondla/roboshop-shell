@@ -9,6 +9,7 @@ N="\e[0m"
 
 TIMESTAMP=$("date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
+exec &>$LOGFILE
 
 echo "Script started at $TIMESTAMP" &>> $LOGFILE
 
@@ -28,3 +29,29 @@ then
 else
     echo  "you are root user"
 fi
+
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+
+VALIDATE $? "INSTALLING THE APPLICATION"
+
+dnf module enable redis:remi-6.2 -y
+
+VALIDATE $? "ENABLE THIS APPLICATION"
+
+dnf install redis -y
+
+VALIDATE $? "INSTALLING REDIS"
+
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis.conf
+
+VALIDATION $? "ALLOWING REMOTE CONNECTION"
+
+
+systemctl enable redis
+
+VALIDATE $? "ENABLE AFTER THE CRATION"
+
+systemctl start redis
+
+VALIDATE $? "Start redis"
+
