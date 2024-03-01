@@ -90,7 +90,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? "Installing mongodb"
 
 
-mongo --host $ <mongdb.nagendrababu.online /app/schema/catalogue.js  &>> $LOGFILE
+mongo --host mongdb.nagendrababu.online /app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Loading catalogue data into MongDB"
 
